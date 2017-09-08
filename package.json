@@ -4,16 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register",
+    "test": "jest",
     "watch": "nodemon --ext js --watch ./ --exec 'mocha --compilers js:babel-core/register' --delay 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel": "^6.5.2",
-    "babel-core": "^6.14.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
     "chai": "^3.5.0",
-    "mocha": "^3.0.2",
-    "nodemon": "^1.10.2"
+    "flow-bin": "^0.54.1",
+    "flow-typed": "^2.1.5",
+    "jest": "^21.0.2",
+    "nodemon": "^1.10.2",
+    "prettier": "^1.6.1"
   }
 }
