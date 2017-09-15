@@ -1,29 +1,38 @@
-// Import chai.
-let chai = require('chai'),
-  path = require('path')
+// @flow
+let chai = require('chai');
+let path = require('path');
 
-// Tell chai that we'll be using the "should" style assertions.
-chai.should();
-should = chai.should();
+let Bowling = require('../bowling');
 
-// Import the Rectangle class.
-let Bowling = require(path.join(__dirname, '..', 'bowling'));
-
-// The fat arrow (=>) syntax is a new way to define
-// functions in ES6. One feature that is different
-// from the usual "function" keyword is that the scope
-// is inherited from the parent, so there is no need to write
-//
-//   function() {
-//     ...
-//   }.bind(this)
-//
-// anymore. In this case we are not using "this" so the new
-// syntax is just used for brevity.
 describe('Bowling', () => {
+  it('should test foo', () => {
+
+    const bowling: Bowling = new Bowling();
+    let ret:string = bowling.foo(43);
+
+  });
+
   it('should start', () => {
-    bowling = new Bowling();
+    const bowling: Bowling = new Bowling();
     bowling.start();
     bowling.totalScore = 0;
+
+    expect(bowling.totalScore).toEqual(0);
   });
+
+  it('should add throw', () => {
+    const bowling: Bowling = new Bowling();
+    bowling.start();
+    bowling.addThrow(3);
+    expect(bowling.totalScore).toEqual(3);
+  });
+
+  it('should add another throw', () => {
+    const bowling: Bowling = new Bowling();
+    bowling.start();
+    bowling.addThrow(3);
+    bowling.addThrow(4);
+    expect(bowling.totalScore).toEqual(7);
+  });
+
 });
