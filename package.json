@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "flow": "flow check",
     "test": "jest",
-    "watch": "jest --watch"
+    "watch-jest": "jest --watch",
+    "watch": "nodemon --ext js --watch ./ --exec 'flow check && jest || true' --delay 1"
   },
   "author": "",
   "license": "ISC",
@@ -21,7 +23,7 @@
   },
   "jest": {
     "verbose": true,
-    "transform" : {
+    "transform": {
       ".*": "<rootDir>/node_modules/babel-jest"
     }
   }
