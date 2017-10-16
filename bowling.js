@@ -1,7 +1,7 @@
 class Bowling{
 
   constructor() {
-    let totalScore=2;
+    this.totalScore=2;
   }
 
   start(){

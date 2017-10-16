@@ -25,5 +25,7 @@ describe('Bowling', () => {
     bowling = new Bowling();
     bowling.start();
     bowling.totalScore = 0;
+    bowling.totalScore.should.equal(0);
+
   });
 });
